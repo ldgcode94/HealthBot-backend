@@ -1,0 +1,44 @@
+openapi: 3.0.0
+info:
+  title: HealthBot API
+  version: 1.0.0
+  description: API documentation for HealthBot backend
+
+paths:
+  /health/ask:
+    post:
+      summary: Ask a health-related question
+      tags: [Health]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AskRequest'
+      responses:
+        200:
+          description: Answer returned
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AskResponse'
+        500:
+          description: Internal server error
+
+components:
+  schemas:
+    AskRequest:
+      type: object
+      properties:
+        userId:
+          type: string
+          example: "user-123"
+        questionContent:
+          type: string
+          example: "What is hypertension?"
+    AskResponse:
+      type: object
+      properties:
+        answer:
+          type: string
+          example: "Hypertension is high blood pressure..."
