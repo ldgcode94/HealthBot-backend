@@ -24,4 +24,4 @@ npm run dev
 
 ## 🔗 Related Projects
 
-- [HealthBot Frontend](https://github.com/yourusername/HealthBot)
+- [HealthBot Frontend](https://github.com/ldgcode94/HealthBot)
