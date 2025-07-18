@@ -16,9 +16,10 @@ export class HealthService implements IHealthService {
     @inject("IAnswerRepository") private answerRepository: IAnswerRepository,
     @inject("IAnswerFactory") private answerFactory: IAnswerFactory,
     @inject("IGPTService") private readonly gptService: IGPTService
-  ) {}
+  ) { }
 
   async askQuestion(userId: string, content: string): Promise<string> {
+    console.log('FLAG QUESTION ')
     const question = await this.questionFactory.create(content, userId);
 
     const aggregate = this.questionAggregateFactory.create(question);
